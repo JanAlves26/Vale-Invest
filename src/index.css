@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-forest-950: #021a14;
+  --color-forest-900: #00452F;
+  --color-forest-850: #063B2C;
+  --color-forest-800: #0B4F3C;
+  --color-forest-700: #146B52;
+  --color-forest-100: #E2ECE8;
+  --color-forest-50: #F0F6F4;
+  
+  --color-gold-500: #C5A059;
+  --color-gold-400: #D8B574;
+  --color-gold-600: #A8843F;
+  --color-gold-700: #88682D;
+  --color-gold-100: #F7F1E3;
+  --color-gold-50: #FAF6ED;
+
+  --color-beige-100: #F5F1E7;
+  --color-beige-50: #FAF8F3;
+}
+
+html {
+  font-family: var(--font-sans);
+  color-scheme: light;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background-color: rgba(197, 160, 89, 0.25);
+  color: #00452F;
+}
+
+/* Button Shimmer Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transition: transform 0.65s ease;
+  pointer-events: none;
+}
+
+.btn-shimmer:hover::before {
+  transform: translateX(200%);
+}
+
+.btn-shimmer:active {
+  transform: scale(0.975);
+}
+
+/* Luxury Card Hover Lift and Glow */
+.card-interactive {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(0, 43, 29, 0.12),
+              0 0 15px -3px rgba(197, 160, 89, 0.15);
+}
+
+.card-interactive:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Dark Card Hover for deep emerald cards */
+.card-dark-interactive {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.card-dark-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5),
+              0 0 25px -2px rgba(197, 160, 89, 0.22);
+  border-color: rgba(197, 160, 89, 0.65);
+}
+
+.card-dark-interactive:active {
+  transform: translateY(-2px) scale(0.99);
+}

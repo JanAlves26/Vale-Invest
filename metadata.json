@@ -1,0 +1,8 @@
+{
+  "name": "Vale da Saudade Invest",
+  "description": "Plataforma institucional de captação e apresentação de oportunidades de investimento em empreendimentos memoriais da Vale da Saudade Invest.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
